@@ -86,21 +86,19 @@ function Store(name, minCust, maxCust, avgSales) {
     footerRow.appendChild (totalStringElement);
 
     //figure out how to add the total daily sales for all stores
+    //stretch goal, screw it, I'm tired
     for (var i =0; i < hours.length; i++){
       var tdElement = document.createElement('td');
       tdElement.textContent = 'blah';
       footerRow.appendChild (tdElement);
     }
-    //this is the totals cell in top right corner
-    // var totalElement = document.createElement('td');
-    // totalElement.textContent = 'Daily Cookie Sales Total';
-    // tableTimeRow.appendChild (totalElement);
   };
 }
 
 //this is a blank var for the footer row only
 var blankStoreForFooterRow = new Store ();
 
+console.log(cookieStores);
 
 //1. First and Pike Store, constructor
 var firstAndPikeStore = new Store('First and Pike', 23, 65, 6.3);
@@ -132,4 +130,3 @@ alkiStore.render();
 
 //this adds footer row, figuring out how to add totals
 blankStoreForFooterRow.makeFooterRow();
-//console.log(cookieStores);
