@@ -108,6 +108,7 @@ var seattleCenter = {
     avgSales: 3.7,
     cookiesEachHourArray: [],
     custEachHourArray: [],
+    totalCookiesPerHourAllStores: [],
     totalDailyCookieSales: 0,
     salesPerHour: function () {
       for (var i = 0; i < hours.length; i++) {
