@@ -1,0 +1,17 @@
+tr {
+  border-width: medium;
+  border-color: black;
+  border-style: solid;
+}
+
+#cookiesSoldPerHour {
+  border-width: medium;
+  border-color: black;
+  border-style: solid;
+}
+
+td {
+  border-width: medium;
+  border-color: black;
+  border-style: solid;
+}
