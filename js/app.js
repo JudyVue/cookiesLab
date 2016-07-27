@@ -97,13 +97,14 @@ function Store(name, minCust, maxCust, avgSales) {
 
 //this is a blank var for the footer row only
 var blankStoreForFooterRow = new Store ();
+blankStoreForFooterRow.makeHeaderRow();
 
 console.log(cookieStores);
+
 
 //1. First and Pike Store, constructor
 var firstAndPikeStore = new Store('First and Pike', 23, 65, 6.3);
 firstAndPikeStore.salesPerHour();
-firstAndPikeStore.makeHeaderRow();
 firstAndPikeStore.render();
 
 
@@ -129,4 +130,4 @@ alkiStore.salesPerHour();
 alkiStore.render();
 
 //this adds footer row, figuring out how to add totals
-blankStoreForFooterRow.makeFooterRow();
+//  blankStoreForFooterRow.makeFooterRow();
