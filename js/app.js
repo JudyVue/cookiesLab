@@ -29,11 +29,13 @@ function Store(name, minCust, maxCust, avgSales) {
       //find random #s between min and max
       var custPerHour = Math.floor(Math.random() * (maxCust-minCust+1) + minCust);
       var cookiesPerHour = Math.floor(custPerHour * avgSales);
-      this.totalDailyCookieSales += cookiesPerHour;
 
       //pushes #s to arrays
       this.cookiesEachHourArray.push(cookiesPerHour);
       this.custEachHourArray.push(custPerHour);
+
+      //calculates daily totals
+      this.totalDailyCookieSales += cookiesPerHour;
 
     }
   };
@@ -110,19 +112,22 @@ if (!event.target.name.value || !event.target.min.value || !event.target.max.val
   avgCustInput = parseInt(avgCustInput);
   console.log("this is avg customers " + avgCustInput);
 
+
+
 //the new store
   var newStore = new Store(nameInput, minInput, maxInput, avgCustInput);
+  console.log(newStore.custEachHourArray); //testing to see if math works
 
 //pushes data into arrays
   allFieldInputs.push(nameInput, minInput, maxInput, avgCustInput);
 }
 inputForm.addEventListener('submit', handleStoreNameInput);
 
-//clear the info in fields
-// clearInfoButton.addEventListener('click', function(event) {
-//   console.log('clear the fields');
-//
-// });
+// clear the info in fields
+clearInfoButton.addEventListener('reset', function(event) {
+  console.log('clear the fields');
+
+});
 
 
 function makeHeaderRow() {
