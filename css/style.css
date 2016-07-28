@@ -1,3 +1,11 @@
+#clearInfo {
+  /*margin-left: 20px; */
+}
+
+#newInfo {
+  dislay: block;
+}
+
 tr {
   border-width: medium;
   border-color: black;
@@ -14,4 +22,18 @@ td {
   border-width: medium;
   border-color: black;
   border-style: solid;
+}
+
+legend {
+  font-size: 20px ;
+}
+
+table {
+  margin-top: 20px;
+  /*border-radius: 100px;*/
+  padding: 20px;
+}
+
+label {
+  //padding-bottom: 20px;
 }
