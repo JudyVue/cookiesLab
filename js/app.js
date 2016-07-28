@@ -11,8 +11,8 @@ var cookieStores = [];
 var newInfoButton = document.getElementById('newInfo');
 var clearInfoButton = document.getElementById('clearInfo');
 var inputForm = document.getElementById('inputForm');
-var allFieldInputs = [];
 var inputFields = document.getElementsByTagName('input');
+var cookieTable = document.getElementById('cookiesSoldPerHour');
 
 
 function Store(name, minCust, maxCust, avgSales) {
@@ -41,7 +41,6 @@ function Store(name, minCust, maxCust, avgSales) {
   };
   this.render = function() {
     //creates new row for store
-    var cookieTable = document.getElementById('cookiesSoldPerHour');
     var numCookiesRow = document.createElement('tr');
     cookieTable.appendChild (numCookiesRow);
 
@@ -61,30 +60,41 @@ function Store(name, minCust, maxCust, avgSales) {
     totalSalesElement.textContent = this.totalDailyCookieSales;
     numCookiesRow.appendChild (totalSalesElement);
   };
-  this.makeFooterRow = function() {
-    var cookieTable = document.getElementById('cookiesSoldPerHour');
-    var footerRow = document.createElement('tr');
-    cookieTable.appendChild (footerRow);
 
-    //this is cell that says "Totals"
-    var totalStringElement = document.createElement('td');
-    totalStringElement.textContent = 'Total Hourly Sales for All Stores';
-    footerRow.appendChild (totalStringElement);
-
-    //figure out how to add the total daily sales for all stores
-    //stretch goal, screw it, I'm tired
-    for (var i =0; i < hours.length; i++){
-      var tdElement = document.createElement('td');
-      tdElement.textContent = 'blah';
-      footerRow.appendChild (tdElement);
-    }
-  };
 
   this.salesPerHour();
   this.render();
   cookieStores.push(this);
+
 }
 
+function makeFooterRow() {
+  var cookieTable = document.getElementById('cookiesSoldPerHour');
+  var footerRow = document.createElement('tr');
+  cookieTable.appendChild (footerRow);
+
+  //this is cell that says "Totals"
+  var totalStringElement = document.createElement('td');
+  totalStringElement.textContent = 'Total Hourly Sales for All Stores';
+  footerRow.appendChild (totalStringElement);
+
+  //double for loops to calculate all stores' hourly sales
+  var allStoresTotal = 0;
+  for (var i =0; i < hours.length; i++){
+    var hourlyTotal = 0;
+    for (var j=0; j < cookieStores.length; j++) {
+      hourlyTotal = hourlyTotal + cookieStores[j].cookiesEachHourArray[i];
+      allStoresTotal += cookieStores[j].cookiesEachHourArray[i];
+    }
+    var hourlyTotalElement = document.createElement('td');
+    hourlyTotalElement.textContent = hourlyTotal;
+    footerRow.appendChild (hourlyTotalElement);
+  }
+  var tdElement = document.createElement('td');
+  tdElement.textContent = allStoresTotal;
+  footerRow.appendChild (tdElement);
+
+}
 
 //function to handle name
 function handleStoreNameInput(event){
@@ -112,15 +122,28 @@ if (!event.target.name.value || !event.target.min.value || !event.target.max.val
   avgCustInput = parseInt(avgCustInput);
   console.log("this is avg customers " + avgCustInput);
 
-
-
 //the new store
   var newStore = new Store(nameInput, minInput, maxInput, avgCustInput);
   console.log(newStore.custEachHourArray); //testing to see if math works
 
-//pushes data into arrays
-  allFieldInputs.push(nameInput, minInput, maxInput, avgCustInput);
+  //code to keep footer row as a footerRow
+  cookieTable.textContent = null;
+
+ makeHeaderRow();
+
+ //code to remake table after null
+//   for (var i = 0; i < cookieStores.length; i++){
+//     if (nameInput === cookieStores[i].name) {
+//       //updates row if matches between name
+//       cookieStores[i] = newStore;
+//
+//     }
+//     cookieStores[i].render();
+//   }
+//
+//   makeFooterRow();
 }
+
 inputForm.addEventListener('submit', handleStoreNameInput);
 
 // clear the info in fields
@@ -133,7 +156,6 @@ clearInfoButton.addEventListener('reset', function(event) {
 function makeHeaderRow() {
   //1. create table row to attach to HTML id cookiesSoldPerHour
   //first need to declare that HTML table as a variable
-  var cookieTable = document.getElementById('cookiesSoldPerHour');
   var tableTimeRow = document.createElement('tr');
   cookieTable.appendChild (tableTimeRow);
   //this is the blank cell in top left corner
@@ -152,22 +174,15 @@ function makeHeaderRow() {
   tableTimeRow.appendChild (totalElement);
 }
 
+//creating time table row for first page load
 makeHeaderRow();
 
-//1. First and Pike Store, constructor
+//instatiate objects
 var firstAndPikeStore = new Store('First and Pike', 23, 65, 6.3);
-
-//2. SeaTac Airport store constructor
 var seaTacAirportStore = new Store('SeaTac Airport', 3, 24, 1.2);
-
-//3. Seattle Center store constructor
 var seattleCenterStore = new Store('Seattle Center', 11, 38, 3.7);
-//4. Capital Hill store constructor
 var capitolHillStore = new Store('Capitol Hill', 20, 38, 2.3);
-
-//.5 Alki store constructor
 var alkiStore = new Store('Alki', 2, 16, 4.6);
 
-
-//this adds footer row, figuring out how to add totals
-//  blankStoreForFooterRow.makeFooterRow();
+//make footer row for first page load
+makeFooterRow();
