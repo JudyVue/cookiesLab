@@ -1,25 +1,39 @@
 /*This CSS links to index.html*/
 
-body {
-  background-color: #4d4d4d;
-  color: #FFEFD5;
-  font-family: 'Crete Round', serif;
+ul {
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: auto;
 
 }
 
-#cutter {
-  width: 276px;
-  height:150px;
-  margin-top:0px;
-  position: absolute;
+.button {
+  font-family: 'Crete Round', serif;
+  font-size: 16px;
+  border-radius: 5px;
+
+}
+
+body {
+  background-color: #FFFAF0;
+  color: black;
+  font-family: 'Crete Round', serif;
 }
 
 .content {
   display: block;
   position: relative;
   margin: auto;
+  text-align: center;
+}
 
-
+img {
+  border-style: none;
+  border-width: 1px;
+  border-radius: 10px;
 }
 
 #homePics {
@@ -27,7 +41,7 @@ body {
   height: 200px;
   display: block;
   margin: auto;
-  padding-top: 20px; 
+  padding-top: 20px;
 }
 
 #shirt {
@@ -36,6 +50,7 @@ body {
 
 }
 
+/*hover effects taken and modified from https://codepen.io/nxworld/pen/ZYNOBZ*/
 #shirt:hover {
   -webkit-transform: scale(1.0);
   	transform: scale(1.2);
@@ -44,7 +59,10 @@ body {
 #cutter {
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
-
+  width: 276px;
+  height:150px;
+  margin-top:0px;
+  position: absolute;
 
 }
 
@@ -63,6 +81,27 @@ body {
   -webkit-transform: scale(1.0);
   	transform: scale(1.3);
 
+}
+
+#aboutDiv {
+  display: block;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
+}
+
+#aboutDiv > p {
+  font-size: 17px;
+  text-align: left;
+  margin: 20px; 20px; 20px; 20px;
+
+}
+
+#family {
+  width: 500px;
+  height: 300px;
+  float: left;
 }
 
 
