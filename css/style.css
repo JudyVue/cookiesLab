@@ -1,26 +1,50 @@
-/*This CSS links to index.html*/
+/*This is the CSS mostly for index.html, CSS for sales.html @ ~line 201*/
+
+header h1 {
+  border-style: none;
+  width: 500px;
+  margin: auto;
+  display: inline;
+  font-size: 50px;
+
+}
+
+#pat {
+  text-align: center;
+}
+
+.salmon {
+  border-style: none;
+  width: 200px;
+  padding-bottom: 0px;
+}
 
 ul {
   text-align: center;
 }
 
-nav li {
+li {
   display: inline;
-  margin: auto;
-
 }
 
 .button {
-  font-family: 'Crete Round', serif;
+  font-family: 'Mitr', sans-serif;
   font-size: 16px;
   border-radius: 5px;
+  margin: auto;
+  background: transparent;
 
 }
 
+.button:hover {
+  opacity: 0.5;
+}
+
 body {
-  background-color: #FFFAF0;
+  background-color: white;
   color: black;
-  font-family: 'Crete Round', serif;
+  font-family: 'Mitr', sans-serif;
+  margin-bottom: 120px;
 }
 
 .content {
@@ -84,11 +108,18 @@ img {
 }
 
 #aboutDiv {
-  display: block;
   position: relative;
   margin: auto;
   text-align: center;
   margin-top: 200px;
+  border-style: none;
+}
+
+#aboutGraf {
+  display: block;
+  margin: auto 100px auto 100px;
+  border-style: none;
+
 }
 
 #aboutDiv > p {
@@ -96,22 +127,44 @@ img {
   text-align: left;
   margin: 20px; 20px; 20px; 20px;
 
+
 }
 
 #family {
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
   float: left;
 }
 
+#about p {
+  width: 600px;
+  margin-left: 200px;
+  border-style: none;
+}
+
+#locations {
+  margin-top:100px;
+}
+
 #locationsDiv {
-  margin-top: 200px;
+  margin: auto auto auto auto;
+  border-style: none;
 
 }
 
-#fish {
+#fish1 {
   display: inline-block;
-  float: left; 
+  float: left;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#fish2 {
+  display: inline-table;
+  float: right;
+  position: absolute;
   width: 200px;
   height: 150px;
   margin-top: 10px;
@@ -120,37 +173,73 @@ img {
 
 #locationsDiv > div {
   display: inline-block;
-  padding: 20px 20px 20px 20px;
-  font-size: 20px;
+  padding: 20px 5px 20px 5px;
+  font-size: 14px;
+  max-width: 600;
+  margin-top: 1px;
+  border-style: none;
+}
+
+#locationsDiv h1 {
+  text-align: center;
+  margin-bottom: 1px;
+  border-style: none;
+
+}
+
+#contactUs {
+  text-align: center;
+}
+
+.chinook {
+  width: 100px;
+  height: 50px;
+
 }
 
 
-
-/*=================*/
+/*This is the CSS for sales.html=================*/
 #clearInfo {
-  /*margin-left: 20px; */
+  font-family: 'Mitr', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: auto;
+  background: transparent;
+
+}
+
+#clearInfo:hover{
+    opacity: 0.5;
+}
+
+#newInfo:hover{
+  opacity: 0.5;
 }
 
 #newInfo {
   dislay: block;
+  font-family: 'Mitr', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: auto;
+  background: transparent;
 }
 
 tr {
-  border-width: medium;
-  border-color: black;
-  border-style: solid;
+
+  border-style: none;
 }
 
 #cookiesSoldPerHour {
-  border-width: medium;
-  border-color: black;
-  border-style: solid;
+
+
+  border-style: none;
 }
 
 td {
-  border-width: medium;
-  border-color: black;
+
   border-style: solid;
+
 }
 
 legend {

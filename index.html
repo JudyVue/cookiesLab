@@ -1,23 +1,27 @@
+<!-- There were plans to create functions in JS to hide and unhide divs according to the click of the button, but didn't get around to it.  -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Pat's Salmon Cookies</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mitr" rel="stylesheet">
   </head>
   <body>
-
     <header>
-      <h1>Pat's Salmon Cookies</h1>
+      <ul>
+      <li><img src='img/salmon.png'/ class='salmon'/></li>
+      <li><h1 id='pat'>Pat's Salmon Cookies</li></h1>
+      <li><img src='img/salmon.png'/ class='salmon'/></li>
+     </ul>
       <nav>
         <ul>
-          <li><button class='button'>Home</li></button>
-          <li><button class='button'>About Us</li></button>
-          <li><button class='button'>Locations and Hours</li></button>
-          <li><button class='button'>Contact Us</li></button>
-          <li><button class='button'>Purchase Online</li></button>
-        </ul>
+          <li><button class='button'><img src='img/chinook.jpg'/ class='chinook'/>Home</li></button>
+          <li><button class='button'><img src='img/chinook.jpg'/ class='chinook'/>About Us</li></button>
+          <li><button class='button'><img src='img/chinook.jpg'/ class='chinook'/>Locations and Hours</li></button>
+          <li><button class='button'><img src='img/chinook.jpg'/ class='chinook'/>Purchase Online</li></button>
+       </ul>
       </nav>
     </header>
 
@@ -26,93 +30,86 @@
       <div class='content'>
         <h2>Welcome to Pat's Salmon Cookies!</h2>
         <p id='welcome'>We are the only store in the Pacific Northwest that sells delicious salmon cookies. Check out our five locations in the Seattle area.<br>Don't have time to go to one of our stores? Order our cookies online - and throw in a T-shirt while you're at it!</br></p>
-        <!-- Merch pics -->
         <div id='homePics'>
           <img src='img/shirt.jpg'/ id='shirt'/>
           <img src='img/cutter.jpg'/ id='cutter'/>
           <img src='img/frosted-cookie.jpg'/ id='frost'/>
-
       </div>
      </div>
-
     </section>
 
 <!-- the about page -->
     <section id='about'>
       <div id='aboutDiv'>
-        <img src='img/family.jpg'/ id='family'/>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h1>Pat's Story</h1>
+        <div id='aboutGraf'>
+          <img src='img/family.jpg'/ id='family'/>
+          <p>Some story about Pat and his family and why he loves salmon cookies. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
       </div>
     </section>
 
     <!-- the location and hours page -->
    <section id='locations'>
     <div id='locationsDiv'>
-    <h2>Locations and Hours</h2>
-    <img src='img/fish.jpg'/ id='fish'/>
-
-
+    <h1>Locations and Hours</h1>
+    <img src='img/fish.jpg'/ id='fish1'/>
       <div id='pike'>
-
-          <p>Pike Place Market
-            <br>something here</br>
-            something here
-            <br>something here</br>
-            something here
-          </p>
+        <p>Pike Place Market
+        <br>something here</br>
+        something here
+        <br>something here</br>
+        something here
+        </p>
       </div>
 
-        <div id='seatac'>
-          <p>Sea-Tac Airport
-            <br>something here</br>
-            something here
-            <br>something here</br>
-            something here
-          </p>
-        </div id='seatac'>
+      <div id='seatac'>
+        <p>Sea-Tac Airport
+        <br>something here</br>
+        something here
+        <br>something here</br>
+        something here
+      </p>
+      </div id='seatac'>
 
-        <div id='capitol'>
-          <p>Capitol Hill
-            <br>something here</br>
-            something here
-            <br>something here</br>
-            something here
-          </p>
-        </div id='capitol'>
+      <div id='capitol'>
+        <p>Capitol Hill
+        <br>something here</br>
+        something here
+        <br>something here</br>
+        something here
+        </p>
+      </div id='capitol'>
 
-        <div id='seattleCenter'>
-          <p>Seattle Center
-            <br>something here</br>
-            something here
-            <br>something here</br>
-            something here
-          </p>
-        </div id='seattleCenter'>
+      <div id='seattleCenter'>
+        <p>Seattle Center
+        <br>something here</br>
+        something here
+        <br>something here</br>
+        something here
+        </p>
+      </div id='seattleCenter'>
+
 
       <div id='alki'>
         <p>Alki Beach
-          <br>something here</br>
-          something here
-          <br>something here</br>
-          something here
+        <br>something here</br>
+        something hereß
+        <br>something here</br>
+        something here
         </p>
       </div id='alki'>
-
-
+      <img src='img/fish.jpg'/ id='fish2'/>
       </div>
     </section>
-
-    <!-- misc pictures -->
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <img src='img/chinook.jpg'/ id='chinook'/>
-
-    <img src='img/salmon.png'/ id='salmon'/>
-
     <script src="js/jsForIndexPage.js"></script>
   </body>
+  <footer>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <p id='contactUs'>Have a question or comment? Email us at fakeemail@fakeemail.com or call us at 206-555-555-5555.</p>
+  </footer>
 </html>
