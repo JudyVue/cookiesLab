@@ -4,6 +4,10 @@
   display: block;
 }
 
+#homeContent > h1{
+  display: none;
+}
+
 header h1 {
   border-style: none;
   width: 500px;
@@ -117,6 +121,12 @@ img {
 
 }
 
+/*the about div*/
+#aboutForHidingOnly {
+  display: none;
+}
+
+
 #aboutDiv {
   position: relative;
   margin: auto;
@@ -150,6 +160,11 @@ img {
   width: 600px;
   margin-left: 200px;
   border-style: none;
+}
+
+/*locations div*/
+#locationsForHidingOnly {
+  display: none;
 }
 
 #locations {
@@ -195,6 +210,7 @@ img {
   text-align: center;
   margin-bottom: 1px;
   border-style: none;
+  display: none;
 
 }
 
@@ -207,9 +223,13 @@ img {
   height: 50px;
 
 }
-
+/*purchase div*/
 #purchaseDiv {
   text-align: center;
+  display: none;
+}
+
+#purchaseForHidingOnly {
   display: none;
 }
 
