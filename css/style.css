@@ -1,5 +1,9 @@
 /*This is the CSS mostly for index.html, CSS for sales.html @ ~line 201*/
 
+#content {
+  display: block;
+}
+
 header h1 {
   border-style: none;
   width: 500px;
@@ -47,7 +51,13 @@ body {
   margin-bottom: 120px;
 }
 
-.content {
+.welcome {
+  text-align:center;
+  width: 400px;
+  margin: auto auto 20px auto;
+}
+
+#content {
   display: block;
   position: relative;
   margin: auto;
@@ -111,8 +121,8 @@ img {
   position: relative;
   margin: auto;
   text-align: center;
-  margin-top: 200px;
   border-style: none;
+  display: none;
 }
 
 #aboutGraf {
@@ -149,6 +159,7 @@ img {
 #locationsDiv {
   margin: auto auto auto auto;
   border-style: none;
+  display: none;
 
 }
 
@@ -195,6 +206,11 @@ img {
   width: 100px;
   height: 50px;
 
+}
+
+#purchaseDiv {
+  text-align: center;
+  display: none;
 }
 
 
