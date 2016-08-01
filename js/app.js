@@ -1,4 +1,4 @@
-//Week 2 Cookies Lab - Objects and Methods
+
 'use strict.';
 
 //global variables
@@ -27,7 +27,7 @@ function Store(name, minCust, maxCust, avgSales) {
   this.salesPerHour = function() {
     for (var i = 0; i < hours.length; i++) {
       //find random #s between min and max
-      var custPerHour = Math.floor(Math.random() * (maxCust-minCust+1) + minCust);
+      var custPerHour = Math.floor(Math.random() * (maxCust - minCust+1) + minCust);
       var cookiesPerHour = Math.floor(custPerHour * avgSales);
 
       //pushes #s to arrays
@@ -50,7 +50,7 @@ function Store(name, minCust, maxCust, avgSales) {
     numCookiesRow.appendChild(storeNameElement);
 
     //make td element in a for loop to display the #cookies sold
-    for (var i =0; i < this.cookiesEachHourArray.length; i++){
+    for (var i = 0; i < this.cookiesEachHourArray.length; i++){
       var tdElement = document.createElement('td');
       tdElement.textContent = this.cookiesEachHourArray[i];
       numCookiesRow.appendChild (tdElement);
@@ -61,12 +61,10 @@ function Store(name, minCust, maxCust, avgSales) {
     numCookiesRow.appendChild (totalSalesElement);
   };
 
-
-  this.salesPerHour();
-  this.render();
   cookieStores.push(this);
+  this.salesPerHour();
 
-}
+} // end of the constructor
 
 function makeFooterRow() {
   var cookieTable = document.getElementById('cookiesSoldPerHour');
@@ -122,27 +120,26 @@ if (!event.target.name.value || !event.target.min.value || !event.target.max.val
   avgCustInput = parseInt(avgCustInput);
   console.log("this is avg customers " + avgCustInput);
 
-//the new store
-  var newStore = new Store(nameInput, minInput, maxInput, avgCustInput);
-  console.log(newStore.custEachHourArray); //testing to see if math works
 
   //code to keep footer row as a footerRow
   cookieTable.textContent = null;
 
- makeHeaderRow();
-
- //code to remake table after null
-//   for (var i = 0; i < cookieStores.length; i++){
-//     if (nameInput === cookieStores[i].name) {
-//       //updates row if matches between name
-//       cookieStores[i] = newStore;
-//
-//     }
-//     cookieStores[i].render();
-//   }
-//
-//   makeFooterRow();
-}
+// for (var i = 0; i < cookieStores.length; i++) {
+//     if (we get a matched store name) {
+//       replace store properties from form
+//       recalc arrays
+//       redraw table
+//     } else {
+      //the new store
+      var newStore = new Store(nameInput, minInput, maxInput, avgCustInput);
+      console.log(newStore.custEachHourArray); //testing to see if math works
+      makeHeaderRow();
+      drawAllMahStores();
+      makeFooterRow();
+      return;
+  //   }
+  // }
+} // end of handler
 
 inputForm.addEventListener('submit', handleStoreNameInput);
 
@@ -173,10 +170,6 @@ function makeHeaderRow() {
   totalElement.textContent = 'Daily Cookie Sales Total';
   tableTimeRow.appendChild (totalElement);
 }
-
-//creating time table row for first page load
-makeHeaderRow();
-
 //instatiate objects
 var firstAndPikeStore = new Store('First and Pike', 23, 65, 6.3);
 var seaTacAirportStore = new Store('SeaTac Airport', 3, 24, 1.2);
@@ -184,5 +177,13 @@ var seattleCenterStore = new Store('Seattle Center', 11, 38, 3.7);
 var capitolHillStore = new Store('Capitol Hill', 20, 38, 2.3);
 var alkiStore = new Store('Alki', 2, 16, 4.6);
 
-//make footer row for first page load
+function drawAllMahStores() {
+  for (var i = 0; i < cookieStores.length; i++) {
+    cookieStores[i].render();
+  }
+}
+
+//creating time table row for first page load
+makeHeaderRow();
+drawAllMahStores();
 makeFooterRow();
